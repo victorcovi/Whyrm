@@ -1,0 +1,58 @@
+; ---- ENTITY DEFINITIOS BY TYPE 
+MACRO DEFINE_ENTITY_S
+.\1\@::
+DB \2	; SY
+DB \3	; SX
+DB \4 	; NUM
+DB \5	; ATT
+DB \2	; SY 	(1)
+DB \3	; SX 	(1)
+DB \4+1	; NUM 	(1)
+DB \5	; ATT 	(1)
+DB \2	; SY 	(2)
+DB \3	; SX 	(2)
+DB \4+2	; NUM 	(2)
+DB \5	; ATT 	(2)
+DB \2	; SY 	(3)
+DB \3	; SX 	(3)
+DB \4+3	; NUM 	(3)
+DB \5	; ATT 	(3)
+ENDM
+MACRO DEFINE_ENTITY_P
+DB \1 	; Y
+DB \2 	; X
+DB \3 	; VY
+DB \4 	; VX
+DB \3	; INITIAL VY
+DB \4	; INITIAL VX
+DB $00	; COLLISION Y
+DB $00	; COLLISION X
+DB \5	; TYPE
+DB $00	; STATE
+DB \6	; FRAME
+DB $00	; LAST FACED
+ENDM
+MACRO DEFINE_PLAYER
+	;               	ENTITY,SY ,SX ,NUM,ATT
+	DEFINE_ENTITY_S		PLAYER,$00,$00,$00,\3
+	;               	Y ,X ,VY ,VX ,T       ,FR
+	DEFINE_ENTITY_P		\2,\1,$00,$00,PLAYER_T,$02 
+ENDM
+MACRO DEFINE_SAW
+	;               	ENT,SY ,SX ,NUM,ATT
+	DEFINE_ENTITY_S		SAW,$00,$00,$04,\3
+	;               	Y ,X ,VY ,VX ,T    ,FR   
+	DEFINE_ENTITY_P		\2,\1,$00,$02,SAW_T,$01
+ENDM
+MACRO DEFINE_BEE
+	;               	ENT,SY ,SX ,NUM,ATT
+	DEFINE_ENTITY_S		BEE,$00,$00,$08,\3
+	;               	Y ,X ,VY ,VX ,T    ,FR  
+	DEFINE_ENTITY_P		\2,\1,$00,$00,BEE_T,$01
+ENDM
+MACRO DEFINE_SPEAR
+	;               	ENTIT,SY ,SX ,NUM,ATT
+	DEFINE_ENTITY_S		SPEAR,$00,$00,$0C,\3
+	;               	Y ,X ,VY ,VX ,T      ,FR  
+	DEFINE_ENTITY_P		\2,\1,-$01,$00,SPEAR_T,$01
+ENDM
