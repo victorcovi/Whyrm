@@ -11,6 +11,6 @@ Game Boy platformer by [Víctor Conejero Vicente](https://github.com/vcv8).
 ## Game
 
 <p float="left">
-  <img src="https://i.imgur.com/78qUhAxl.jpg" width="400" />
-  <img src="https://i.imgur.com/PlE1Beal.jpg" width="400" /> 
+  <img src="https://i.imgur.com/78qUhAxl.jpg" width="410" />
+  <img src="https://i.imgur.com/PlE1Beal.jpg" width="410" /> 
 </p>
